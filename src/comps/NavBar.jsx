@@ -14,15 +14,17 @@ function NavBar() {
   const { logged, logout, first } = React.useContext(UserContext);
 
   function GetnName_() {
-    axios
-      .get(rootUrl + "users/me", config)
-      .then((res) => {
-        console.log(res.data);
+    if (logged) {
+      axios
+        .get(rootUrl + "users/me", config)
+        .then((res) => {
+          console.log(res.data);
 
-        console.log(res.data.name);
-        setname(res.data.name);
-      })
-      .catch((error) => console.log(error));
+          console.log(res.data.name);
+          setname(res.data.name);
+        })
+        .catch((error) => console.log(error));
+    }
   }
   React.useEffect(() => {
     GetnName_();
