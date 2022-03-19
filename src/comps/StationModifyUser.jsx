@@ -32,7 +32,7 @@ function StationModifyForm(props) {
   return (
     <div className="stationFormContainer">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <h1>New Station</h1>
+        <h1>Modify User</h1>
         <input
           type="text"
           placeholder="User Login"
